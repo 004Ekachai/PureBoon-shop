@@ -1,0 +1,161 @@
+/* ===== Global ===== */
+body {
+  background: #f8f9fa;
+  font-family: "Kanit", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* ===== Navbar ===== */
+.navbar .cart-count {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  background: #28a745;
+  color: #fff;
+  border-radius: 999px;
+  padding: 2px 6px;
+  font-size: 0.75rem;
+}
+
+.navbar-brand {
+  font-weight: 600;
+  color: #28a745 !important;
+}
+
+/* ===== Card Product ===== */
+.card {
+  border-radius: 14px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.card .card-body {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ปรับขนาดภาพสินค้าให้ใหญ่ขึ้น */
+img.card-img-top {
+  height: 240px;           /* เดิม 180px → 240px */
+  object-fit: cover;
+  width: 100%;
+  border-top-left-radius: 14px;
+  border-top-right-radius: 14px;
+}
+
+/* ===== Buttons ===== */
+.btn-green {
+  background: #28a745;
+  color: #fff;
+}
+.btn-green:hover {
+  background: #218838;
+  color: #fff;
+}
+
+.btn-outline-success {
+  border-color: #28a745;
+  color: #28a745;
+}
+.btn-outline-success:hover {
+  background: #28a745;
+  color: #fff;
+}
+
+/* ===== Toast ===== */
+.toast {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  background: #fff;
+  border: 1px solid #d1e7dd;
+  color: #0f5132;
+  padding: 0.6rem 0.8rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  display: none;
+  z-index: 2000;
+}
+
+/* ===== Empty State ===== */
+.empty {
+  padding: 2rem;
+  text-align: center;
+  color: #6c757d;
+}
+
+/* ===== Product Page ===== */
+.product-hero {
+  max-height: 420px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.thumb {
+  display: flex;
+  gap: 8px;
+  margin-top: 1rem;
+  justify-content: center;
+}
+.thumb img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: border 0.2s;
+}
+.thumb img:hover {
+  border-color: #28a745;
+}
+
+/* ===== Cart Table ===== */
+.table-cart td,
+.table-cart th {
+  vertical-align: middle;
+}
+
+/* ปรับให้ select + input + ราคา + ปุ่ม อยู่ในบรรทัดเดียว */
+.cart-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.cart-actions select,
+.cart-actions input {
+  max-width: 80px;
+}
+.cart-actions .price {
+  font-weight: 600;
+  color: #28a745;
+}
+
+/* ===== Checkout ===== */
+.checkout-box {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.checkout-summary {
+  margin-top: 2rem;
+  border-top: 1px solid #e9ecef;
+  padding-top: 1rem;
+}
+
+.checkout-summary h5 {
+  font-weight: 600;
+}
+
+.checkout-summary .total {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #28a745;
+}
+
