@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ร้านเพียวบุญ | Shop</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
+  <link rel="stylesheet" href="assets/css/style.css"/>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top px-4">
+    <a class="navbar-brand fw-bold text-success" href="shop.html">ร้านเพียวบุญ</a>
+    <!-- Added navigation links for Home, Products and Cart -->
+    <ul class="navbar-nav mx-auto d-flex flex-row gap-2 flex-grow-1 justify-content-center">
+      <li class="nav-item"><a href="index.html" class="btn btn-outline-success">หน้าหลัก</a></li>
+      <li class="nav-item"><a href="shop.html" class="btn btn-outline-success">สินค้า</a></li>
+      <li class="nav-item"><a href="cart.html" class="btn btn-outline-success">ตะกร้า</a></li>
+    </ul>
+    <div class="d-flex align-items-center ms-auto gap-2">
+      <input type="text" id="searchInput" class="form-control" placeholder="ค้นหาสินค้า (ชื่อ/คำอธิบาย)">
+      <select id="categoryFilter" class="form-select">
+        <option value="all">ทั้งหมด</option>
+      </select>
+      <a href="cart.html" class="position-relative ms-2">
+        <i class="fa-solid fa-cart-shopping fa-xl text-success"></i>
+        <span id="cartCount" class="cart-count">0</span>
+      </a>
+    </div>
+  </nav>
+  <div class="container py-4">
+    <div id="productList" class="row g-4"></div>
+  </div>
+  <div id="toast" class="toast">เพิ่มลงตะกร้าแล้ว</div>
+  <script type="module" src="assets/js/shop.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
