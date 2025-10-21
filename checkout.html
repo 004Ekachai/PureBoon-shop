@@ -31,19 +31,13 @@
             <form id="checkoutForm">
               <div class="mb-3"><label class="form-label">ชื่อ-นามสกุล</label><input id="name" class="form-control" required></div>
               <div class="mb-3"><label class="form-label">เบอร์ติดต่อ</label><input id="phone" class="form-control" required></div>
-              <!-- Added email input field -->
-              <div class="mb-3"><label class="form-label">อีเมล</label><input id="email" type="email" class="form-control" required></div>
               <div class="mb-3"><label class="form-label">ที่อยู่จัดส่ง</label><textarea id="address" class="form-control" rows="3" required></textarea></div>
               <h5 class="mt-4">วิธีการชำระเงิน</h5>
               <div class="form-check"><input class="form-check-input" type="radio" name="payMethod" id="payBank" value="Bank" checked><label class="form-check-label" for="payBank">โอนผ่านธนาคาร</label></div>
               <div class="ms-3 my-2" id="bankBox"><select id="bank" class="form-select"><option value="SCB">ไทยพาณิชย์ (SCB)</option><option value="KBank">กสิกรไทย (KBank)</option><option value="BBL">กรุงเทพ (BBL)</option></select></div>
-              <!-- Display dummy bank account number when bank transfer method is selected -->
-              <div class="ms-3 my-2" id="bankAccountBox"><input id="bankAccount" class="form-control" value="1234567890" readonly></div>
               <div class="form-check"><input class="form-check-input" type="radio" name="payMethod" id="payCard" value="Card"><label class="form-check-label" for="payCard">บัตรเครดิต/เดบิต</label></div>
               <div class="ms-3 my-2 d-none" id="cardBox"><input id="cardNumber" class="form-control" placeholder="เลขบัตร (ทดลอง)"></div>
               <div class="form-check"><input class="form-check-input" type="radio" name="payMethod" id="payQR" value="QR"><label class="form-check-label" for="payQR">สแกน QR</label></div>
-              <!-- Show a placeholder QR code image when QR payment is selected -->
-              <div class="ms-3 my-2 d-none" id="qrBox"><img id="qrImage" src="assets/qr_placeholder.png" alt="QR Code" style="width:200px;height:200px;"></div>
               <div class="form-check"><input class="form-check-input" type="radio" name="payMethod" id="payCOD" value="COD"><label class="form-check-label" for="payCOD">ชำระปลายทาง</label></div>
               <button class="btn btn-green mt-3" type="submit"><i class="fa-solid fa-circle-check"></i> ยืนยันคำสั่งซื้อ</button>
             </form>
