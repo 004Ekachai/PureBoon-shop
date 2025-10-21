@@ -53,7 +53,7 @@ document.getElementById("checkoutForm").addEventListener("submit", async (e)=>{
 
   try{
     await addDoc(collection(db, "orders"), {
-      customer: { name, phone,Email, address },
+      customer: { name, phone, Email, address },
       cart: cart,
       totalAmount: Number(grandEl.textContent)||0,
       payment,
