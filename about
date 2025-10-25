@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ร้านเพียวบุญ</title>
+  <link rel="stylesheet" href="assets/home.css" />
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="site-header">
+    <nav class="navbar">
+      <div class="logo">ร้านเพียวบุญ</div>
+      <ul class="nav-links">
+        <li><a href="index.html">หน้าหลัก</a></li>
+        <li><a href="shop.html">สินค้า</a></li>
+        <li><a href="cart.html">ตะกร้า</a></li>
+        <li><a href="checkout.html">ชำระเงิน</a></li>
+        <li><a href="index.html">สาระน่ารู้</a></li>
+        <li><a href="index.html">เกี่ยวกับเรา</a></li>
+      </ul>
+      <form action="shop.html" class="search" method="get">
+        <input type="text" name="search" placeholder="ค้นหา..." />
+        <button type="submit">ค้นหา</button>
+      </form>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-viewport">
+      <div class="hero-track" id="heroTrack"></div>
+    </div>
+    <button class="ctrl prev" id="prevBtn" aria-label="ก่อนหน้า">❮</button>
+    <button class="ctrl next" id="nextBtn" aria-label="ถัดไป">❯</button>
+    <div class="dots" id="dots"></div>
+  </section>
+
+  <!-- POPULAR -->
+  <section class="popular">
+    <h2>สินค้ายอดนิยมของเรา</h2>
+    <p class="sub">คัดสรรคุณภาพ เหมาะสมต่อการถวายและใช้ได้จริง</p>
+    <div id="popularGrid" class="products-grid"></div>
+  </section>
+
+  <!-- KNOWLEDGE -->
+  <section class="knowledge">
+    <h2>ศรัทธาคู่ปัญญา</h2>
+    <p class="sub">คลังความรู้สำหรับการทำบุญอย่างมีความหมาย</p>
+    <div id="knowledgeGrid" class="knowledge-grid"></div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="footer" class="site-footer"></footer>
+  <!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/68f7cf13b0af5b195165d524/1j8401pu8';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+
+  <script type="module" src="assets/firebase.js"></script>
+  <script type="module" src="assets/home.js"></script>
+</body>
+</html>
