@@ -8,50 +8,56 @@
 
   <style>
     .about-page {
-      background: linear-gradient(180deg, #f7fbf8 0%, #fcfcfc 100%);
+      background: linear-gradient(180deg, #f7faf8 0%, #fcfcfc 100%);
+    }
+
+    .nav-links a.active {
+      background: var(--green);
+      color: #fff;
+      border-color: var(--green);
     }
 
     .about-hero {
       background:
-        radial-gradient(circle at top left, rgba(126, 217, 159, 0.18), transparent 30%),
-        radial-gradient(circle at top right, rgba(46, 125, 50, 0.08), transparent 25%),
-        linear-gradient(180deg, #f5fbf7 0%, #eef7f1 100%);
-      padding: 78px 20px 62px;
+        radial-gradient(circle at top left, rgba(126, 217, 159, 0.16), transparent 28%),
+        radial-gradient(circle at top right, rgba(46, 125, 50, 0.08), transparent 24%),
+        linear-gradient(180deg, #f4faf6 0%, #edf5f0 100%);
+      padding: 110px 20px 96px;
       border-bottom: 1px solid #e7efe9;
     }
 
     .about-hero-inner {
-      max-width: 1080px;
+      max-width: 980px;
       margin: 0 auto;
       text-align: center;
     }
 
     .about-kicker {
-      margin: 0 0 10px;
+      margin: 0 0 14px;
       letter-spacing: 0.18em;
-      font-size: 12px;
+      font-size: 13px;
       font-weight: 700;
-      color: #6aa87a;
+      color: #6f9d7a;
     }
 
     .about-hero h1 {
-      margin: 0;
-      font-size: clamp(40px, 7vw, 80px);
-      line-height: 1.08;
+      margin: 0 0 22px;
+      font-size: clamp(44px, 6vw, 72px);
+      line-height: 1.1;
       color: #6fc786;
-      text-shadow: 0 6px 18px rgba(63, 145, 90, 0.08);
+      text-shadow: 0 8px 20px rgba(63, 145, 90, 0.08);
     }
 
     .about-hero p {
       max-width: 760px;
-      margin: 18px auto 0;
-      font-size: 18px;
-      line-height: 1.9;
-      color: #5d7468;
+      margin: 0 auto;
+      font-size: 19px;
+      line-height: 2;
+      color: #5c7468;
     }
 
     .about-section {
-      padding: 56px 20px;
+      padding: 96px 20px 110px;
     }
 
     .about-wrap {
@@ -61,126 +67,164 @@
 
     .about-story {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
+      grid-template-columns: 1.05fr 1fr;
+      gap: 60px;
       align-items: center;
-      background: rgba(255, 255, 255, 0.9);
+      background: rgba(255, 255, 255, 0.92);
       border: 1px solid #edf1ed;
-      border-radius: 28px;
-      padding: 28px;
-      box-shadow: 0 12px 34px rgba(34, 54, 44, 0.06);
+      border-radius: 34px;
+      padding: 42px;
+      box-shadow: 0 14px 36px rgba(34, 54, 44, 0.06);
+    }
+
+    .about-story-media {
+      position: relative;
+    }
+
+    .about-story-media::after {
+      content: "";
+      position: absolute;
+      left: 24px;
+      right: 24px;
+      bottom: -16px;
+      height: 26px;
+      border-radius: 999px;
+      background: rgba(90, 140, 104, 0.12);
+      filter: blur(14px);
+      z-index: 0;
     }
 
     .about-story-media img {
+      position: relative;
+      z-index: 1;
       width: 100%;
-      height: 360px;
-      object-fit: cover;
-      border-radius: 22px;
+      height: 390px;
+      object-fit: contain;
+      background: #fff;
       display: block;
-      box-shadow: 0 12px 26px rgba(39, 63, 47, 0.1);
+      border-radius: 26px;
+      box-shadow: 0 14px 28px rgba(39, 63, 47, 0.1);
+      padding: 18px;
     }
 
     .about-story-body h2,
     .about-values-head h2,
     .about-cta h2 {
-      margin: 0 0 14px;
-      font-size: clamp(28px, 3vw, 42px);
+      margin: 0 0 16px;
+      font-size: clamp(30px, 3vw, 46px);
       line-height: 1.2;
-      color: #2d5e45;
+      color: #2f5d47;
     }
 
     .about-story-body p,
     .about-values-head p,
     .about-cta p {
-      margin: 0 0 14px;
+      margin: 0 0 18px;
       font-size: 18px;
-      line-height: 1.95;
-      color: #587c70;
+      line-height: 2;
+      color: #5b7c71;
+    }
+
+    .about-story-body p:last-child,
+    .about-values-head p:last-child,
+    .about-cta p:last-child {
+      margin-bottom: 0;
     }
 
     .about-values {
-      margin-top: 34px;
+      margin-top: 78px;
     }
 
     .about-values-head {
       text-align: center;
-      margin-bottom: 28px;
+      max-width: 760px;
+      margin: 0 auto 42px;
     }
 
     .about-values-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
+      gap: 30px;
     }
 
     .about-value-card {
-      background: rgba(255, 255, 255, 0.92);
+      background: rgba(255, 255, 255, 0.95);
       border: 1px solid #edf1ed;
-      border-radius: 24px;
-      padding: 28px 24px;
+      border-radius: 28px;
+      padding: 34px 28px 30px;
       box-shadow: 0 10px 28px rgba(34, 54, 44, 0.05);
       text-align: center;
     }
 
     .about-value-icon {
-      width: 64px;
-      height: 64px;
-      margin: 0 auto 16px;
+      width: 72px;
+      height: 72px;
+      margin: 0 auto 20px;
       border-radius: 50%;
       display: grid;
       place-items: center;
       background: #edf8ef;
       color: #5b9c6e;
-      font-size: 28px;
+      font-size: 30px;
       font-weight: 700;
     }
 
     .about-value-card h3 {
-      margin: 0 0 12px;
+      margin: 0 0 14px;
       font-size: 24px;
-      color: #6bc584;
+      line-height: 1.35;
+      color: #67bd7f;
     }
 
     .about-value-card p {
       margin: 0;
       font-size: 16px;
-      line-height: 1.85;
-      color: #587c70;
+      line-height: 1.95;
+      color: #5b7c71;
     }
 
     .about-cta {
-      margin-top: 34px;
+      margin-top: 78px;
       text-align: center;
-      background: linear-gradient(180deg, #f6fbf7 0%, #eef7f1 100%);
+      background: linear-gradient(180deg, #f4faf6 0%, #edf5f0 100%);
       border: 1px solid #e7efe9;
-      border-radius: 28px;
-      padding: 42px 24px;
+      border-radius: 32px;
+      padding: 58px 32px;
+    }
+
+    .about-cta p {
+      max-width: 760px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .about-cta-buttons {
       display: flex;
       justify-content: center;
-      gap: 14px;
+      gap: 16px;
       flex-wrap: wrap;
-      margin-top: 18px;
+      margin-top: 24px;
     }
 
     .about-btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 12px 22px;
+      min-width: 150px;
+      padding: 14px 26px;
       border-radius: 999px;
       text-decoration: none;
       font-weight: 700;
-      border: 1px solid #d6e7da;
-      transition: 0.2s ease;
+      font-size: 15px;
+      border: 1px solid #d8e7dc;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
     }
 
     .about-btn.primary {
       background: #6bc584;
       color: #fff;
       border-color: #6bc584;
+      box-shadow: 0 10px 22px rgba(107, 197, 132, 0.22);
     }
 
     .about-btn.secondary {
@@ -190,31 +234,83 @@
 
     .about-btn:hover {
       transform: translateY(-1px);
+      box-shadow: 0 12px 24px rgba(39, 63, 47, 0.08);
     }
 
-    .nav-links a.active {
-      background: var(--green);
-      color: #fff;
-      border-color: var(--green);
+    .footer-inner {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .footer-inner h3 {
+      margin: 0 0 8px;
+      font-size: 24px;
     }
 
     @media (max-width: 980px) {
+      .about-hero {
+        padding: 88px 20px 78px;
+      }
+
+      .about-section {
+        padding: 80px 20px 92px;
+      }
+
       .about-story {
         grid-template-columns: 1fr;
+        gap: 34px;
+        padding: 30px;
+      }
+
+      .about-story-media img {
+        height: 320px;
+      }
+
+      .about-values {
+        margin-top: 62px;
       }
 
       .about-values-grid {
         grid-template-columns: 1fr;
+        gap: 22px;
       }
 
-      .about-story-media img {
-        height: 280px;
+      .about-cta {
+        margin-top: 62px;
+        padding: 46px 24px;
       }
     }
 
     @media (max-width: 720px) {
+      .navbar {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .search {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .search input {
+        width: min(100%, 340px);
+      }
+
       .about-hero {
-        padding: 58px 16px 42px;
+        padding: 68px 16px 58px;
+      }
+
+      .about-kicker {
+        font-size: 12px;
+      }
+
+      .about-hero h1 {
+        margin-bottom: 18px;
       }
 
       .about-hero p,
@@ -222,15 +318,53 @@
       .about-values-head p,
       .about-cta p {
         font-size: 16px;
-        line-height: 1.8;
+        line-height: 1.9;
+      }
+
+      .about-section {
+        padding: 62px 16px 76px;
       }
 
       .about-story {
-        padding: 20px;
+        gap: 26px;
+        padding: 22px;
+        border-radius: 24px;
       }
 
       .about-story-media img {
-        height: 230px;
+        height: 250px;
+        border-radius: 20px;
+        padding: 14px;
+      }
+
+      .about-values {
+        margin-top: 50px;
+      }
+
+      .about-values-head {
+        margin-bottom: 28px;
+      }
+
+      .about-value-card {
+        border-radius: 22px;
+        padding: 28px 22px 24px;
+      }
+
+      .about-value-icon {
+        width: 64px;
+        height: 64px;
+        font-size: 26px;
+        margin-bottom: 16px;
+      }
+
+      .about-value-card h3 {
+        font-size: 22px;
+      }
+
+      .about-cta {
+        margin-top: 50px;
+        padding: 38px 20px;
+        border-radius: 24px;
       }
     }
   </style>
@@ -264,7 +398,7 @@
         <p>
           ร้านเพียวบุญเกิดขึ้นจากความตั้งใจที่จะทำให้การทำบุญเป็นเรื่องที่สะดวก
           เข้าใจง่าย และเปี่ยมด้วยความหมาย เพื่อให้ทุกคนสามารถเลือกสิ่งของทำบุญที่เหมาะสม
-          พร้อมทั้งได้รับสาระความรู้ที่ช่วยเติมเต็มคุณค่าทางใจไปพร้อมกัน
+          พร้อมได้รับสาระความรู้ที่ช่วยเติมเต็มคุณค่าทางใจไปพร้อมกัน
         </p>
       </div>
     </section>
@@ -273,21 +407,21 @@
       <div class="about-wrap">
         <div class="about-story">
           <div class="about-story-media">
-            <img src="https://github.com/004Ekachai/004-Ekachai-Cloud/blob/main/hero/background_Image01.png?raw=true" alt="เรื่องราวของร้านเพียวบุญ" />
+            <img src="https://github.com/004Ekachai/004-Ekachai-Cloud/blob/main/hero/background_Image01.png?raw=true" alt="โลโก้และเรื่องราวของร้านเพียวบุญ" />
           </div>
 
           <div class="about-story-body">
-            <h2>ตัวตนและแนวคิดของเรา</h2>
+            <h2>ตัวตนของร้านเพียวบุญ</h2>
             <p>
               เราเชื่อว่าการทำบุญไม่ควรเป็นเพียงการเลือกซื้อของถวายเท่านั้น
               แต่ควรเป็นประสบการณ์ที่เต็มไปด้วยความตั้งใจ ความเข้าใจ และความสบายใจ
-              ร้านเพียวบุญจึงออกแบบพื้นที่ออนไลน์ที่ช่วยให้ผู้คนเข้าถึงของทำบุญได้ง่ายขึ้น
+              ร้านเพียวบุญจึงถูกออกแบบให้เป็นพื้นที่ออนไลน์ที่ช่วยให้ผู้คนเข้าถึงของทำบุญได้ง่ายขึ้น
               พร้อมเนื้อหาความรู้ที่ช่วยให้การทำบุญมีคุณค่ามากกว่าเดิม
             </p>
             <p>
               ไม่ว่าจะเป็นชุดสังฆทาน ของใช้จำเป็นสำหรับพระสงฆ์ หรือบทความสาระน่ารู้
-              เราต้องการให้ทุกองค์ประกอบในเว็บไซต์สะท้อนความเรียบง่าย สะอาดตา
-              และจริงใจ เหมือนการทำบุญที่เริ่มต้นจากใจที่บริสุทธิ์
+              เราตั้งใจให้ทุกองค์ประกอบของเว็บไซต์สะท้อนความเรียบง่าย สะอาดตา และจริงใจ
+              เหมือนการทำบุญที่เริ่มต้นจากใจที่บริสุทธิ์
             </p>
           </div>
         </div>
@@ -295,7 +429,7 @@
         <div class="about-values">
           <div class="about-values-head">
             <h2>สิ่งที่เรายึดถือ</h2>
-            <p>แนวคิดหลักที่ทำให้ร้านเพียวบุญเป็นมากกว่าร้านขายของทำบุญ</p>
+            <p>แนวคิดหลักที่ทำให้ร้านเพียวบุญเป็นมากกว่าพื้นที่สำหรับเลือกซื้อของทำบุญ</p>
           </div>
 
           <div class="about-values-grid">
@@ -312,8 +446,8 @@
               <div class="about-value-icon">๒</div>
               <h3>ความสะดวก</h3>
               <p>
-                เราออกแบบประสบการณ์การเลือกซื้อให้เรียบง่าย เข้าถึงได้ง่าย
-                และช่วยลดความยุ่งยากในการเตรียมของทำบุญ
+                เราออกแบบประสบการณ์การเลือกซื้อให้เรียบง่าย เข้าถึงง่าย
+                และช่วยลดความยุ่งยากในการเตรียมของทำบุญในชีวิตประจำวัน
               </p>
             </article>
 
@@ -334,6 +468,7 @@
             เราอยากให้ร้านเพียวบุญเป็นพื้นที่เล็ก ๆ ที่ช่วยเชื่อมโยงผู้คนกับการทำบุญอย่างอ่อนโยน
             ร่วมสมัย และเข้าถึงง่าย ทั้งในด้านสินค้าและองค์ความรู้
           </p>
+
           <div class="about-cta-buttons">
             <a href="shop.html" class="about-btn primary">เลือกดูสินค้า</a>
             <a href="know.html" class="about-btn secondary">อ่านสาระน่ารู้</a>
