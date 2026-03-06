@@ -1,252 +1,353 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>เกี่ยวกับเรา | ร้านเพียวบุญ</title>
+  <link rel="stylesheet" href="assets/home.css" />
 
-<title>เกี่ยวกับเรา | ร้านเพียวบุญ</title>
+  <style>
+    .about-page {
+      background: linear-gradient(180deg, #f7fbf8 0%, #fcfcfc 100%);
+    }
 
-<link rel="stylesheet" href="assets/home.css">
+    .about-hero {
+      background:
+        radial-gradient(circle at top left, rgba(126, 217, 159, 0.18), transparent 30%),
+        radial-gradient(circle at top right, rgba(46, 125, 50, 0.08), transparent 25%),
+        linear-gradient(180deg, #f5fbf7 0%, #eef7f1 100%);
+      padding: 78px 20px 62px;
+      border-bottom: 1px solid #e7efe9;
+    }
 
-<style>
+    .about-hero-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+      text-align: center;
+    }
 
-/* HERO */
+    .about-kicker {
+      margin: 0 0 10px;
+      letter-spacing: 0.18em;
+      font-size: 12px;
+      font-weight: 700;
+      color: #6aa87a;
+    }
 
-.about-hero{
-background:linear-gradient(180deg,#f6fbf7,#eef6f1);
-padding:90px 20px;
-text-align:center;
-}
+    .about-hero h1 {
+      margin: 0;
+      font-size: clamp(40px, 7vw, 80px);
+      line-height: 1.08;
+      color: #6fc786;
+      text-shadow: 0 6px 18px rgba(63, 145, 90, 0.08);
+    }
 
-.about-hero h1{
-font-size:60px;
-color:#6bc584;
-margin-bottom:10px;
-}
+    .about-hero p {
+      max-width: 760px;
+      margin: 18px auto 0;
+      font-size: 18px;
+      line-height: 1.9;
+      color: #5d7468;
+    }
 
-.about-hero p{
-max-width:700px;
-margin:auto;
-font-size:18px;
-line-height:1.8;
-color:#566b61;
-}
+    .about-section {
+      padding: 56px 20px;
+    }
 
-/* STORY */
+    .about-wrap {
+      max-width: 1120px;
+      margin: 0 auto;
+    }
 
-.about-section{
-padding:70px 20px;
-}
+    .about-story {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid #edf1ed;
+      border-radius: 28px;
+      padding: 28px;
+      box-shadow: 0 12px 34px rgba(34, 54, 44, 0.06);
+    }
 
-.about-container{
-max-width:1100px;
-margin:auto;
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:60px;
-align-items:center;
-}
+    .about-story-media img {
+      width: 100%;
+      height: 360px;
+      object-fit: cover;
+      border-radius: 22px;
+      display: block;
+      box-shadow: 0 12px 26px rgba(39, 63, 47, 0.1);
+    }
 
-.about-image img{
-width:100%;
-border-radius:20px;
-box-shadow:0 15px 30px rgba(0,0,0,0.1);
-}
+    .about-story-body h2,
+    .about-values-head h2,
+    .about-cta h2 {
+      margin: 0 0 14px;
+      font-size: clamp(28px, 3vw, 42px);
+      line-height: 1.2;
+      color: #2d5e45;
+    }
 
-.about-text h2{
-color:#6bc584;
-margin-bottom:15px;
-}
+    .about-story-body p,
+    .about-values-head p,
+    .about-cta p {
+      margin: 0 0 14px;
+      font-size: 18px;
+      line-height: 1.95;
+      color: #587c70;
+    }
 
-.about-text p{
-line-height:1.9;
-color:#556b61;
-}
+    .about-values {
+      margin-top: 34px;
+    }
 
-/* MISSION */
+    .about-values-head {
+      text-align: center;
+      margin-bottom: 28px;
+    }
 
-.mission-section{
-background:#f7faf8;
-padding:70px 20px;
-}
+    .about-values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
 
-.mission-grid{
-max-width:1100px;
-margin:auto;
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:30px;
-}
+    .about-value-card {
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid #edf1ed;
+      border-radius: 24px;
+      padding: 28px 24px;
+      box-shadow: 0 10px 28px rgba(34, 54, 44, 0.05);
+      text-align: center;
+    }
 
-.mission-card{
-background:white;
-padding:30px;
-border-radius:18px;
-box-shadow:0 10px 25px rgba(0,0,0,0.05);
-text-align:center;
-}
+    .about-value-icon {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 16px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: #edf8ef;
+      color: #5b9c6e;
+      font-size: 28px;
+      font-weight: 700;
+    }
 
-.mission-card h3{
-color:#6bc584;
-margin-bottom:10px;
-}
+    .about-value-card h3 {
+      margin: 0 0 12px;
+      font-size: 24px;
+      color: #6bc584;
+    }
 
-/* CTA */
+    .about-value-card p {
+      margin: 0;
+      font-size: 16px;
+      line-height: 1.85;
+      color: #587c70;
+    }
 
-.about-cta{
-text-align:center;
-padding:70px 20px;
-}
+    .about-cta {
+      margin-top: 34px;
+      text-align: center;
+      background: linear-gradient(180deg, #f6fbf7 0%, #eef7f1 100%);
+      border: 1px solid #e7efe9;
+      border-radius: 28px;
+      padding: 42px 24px;
+    }
 
-.about-cta h2{
-color:#6bc584;
-margin-bottom:15px;
-}
+    .about-cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 18px;
+    }
 
-.about-cta a{
-display:inline-block;
-background:#6bc584;
-color:white;
-padding:12px 25px;
-border-radius:25px;
-text-decoration:none;
-margin-top:15px;
-}
+    .about-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 22px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 700;
+      border: 1px solid #d6e7da;
+      transition: 0.2s ease;
+    }
 
-@media(max-width:900px){
+    .about-btn.primary {
+      background: #6bc584;
+      color: #fff;
+      border-color: #6bc584;
+    }
 
-.about-container{
-grid-template-columns:1fr;
-}
+    .about-btn.secondary {
+      background: #fff;
+      color: #4f7f73;
+    }
 
-.mission-grid{
-grid-template-columns:1fr;
-}
+    .about-btn:hover {
+      transform: translateY(-1px);
+    }
 
-}
+    .nav-links a.active {
+      background: var(--green);
+      color: #fff;
+      border-color: var(--green);
+    }
 
-</style>
+    @media (max-width: 980px) {
+      .about-story {
+        grid-template-columns: 1fr;
+      }
 
+      .about-values-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-story-media img {
+        height: 280px;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .about-hero {
+        padding: 58px 16px 42px;
+      }
+
+      .about-hero p,
+      .about-story-body p,
+      .about-values-head p,
+      .about-cta p {
+        font-size: 16px;
+        line-height: 1.8;
+      }
+
+      .about-story {
+        padding: 20px;
+      }
+
+      .about-story-media img {
+        height: 230px;
+      }
+    }
+  </style>
 </head>
+<body class="about-page">
+  <header class="site-header">
+    <nav class="navbar">
+      <div class="logo">ร้านเพียวบุญ</div>
 
-<body>
+      <ul class="nav-links">
+        <li><a href="index.html">หน้าหลัก</a></li>
+        <li><a href="shop.html">สินค้า</a></li>
+        <li><a href="cart.html">ตะกร้า</a></li>
+        <li><a href="checkout.html">ชำระเงิน</a></li>
+        <li><a href="know.html">สาระน่ารู้</a></li>
+        <li><a href="about.html" class="active">เกี่ยวกับเรา</a></li>
+      </ul>
 
-<header class="site-header">
-<nav class="navbar">
+      <form action="shop.html" class="search" method="get">
+        <input type="text" name="search" placeholder="ค้นหา..." />
+        <button type="submit">ค้นหา</button>
+      </form>
+    </nav>
+  </header>
 
-<div class="logo">ร้านเพียวบุญ</div>
+  <main>
+    <section class="about-hero">
+      <div class="about-hero-inner">
+        <p class="about-kicker">PUREBOON STORY</p>
+        <h1>เกี่ยวกับร้านเพียวบุญ</h1>
+        <p>
+          ร้านเพียวบุญเกิดขึ้นจากความตั้งใจที่จะทำให้การทำบุญเป็นเรื่องที่สะดวก
+          เข้าใจง่าย และเปี่ยมด้วยความหมาย เพื่อให้ทุกคนสามารถเลือกสิ่งของทำบุญที่เหมาะสม
+          พร้อมทั้งได้รับสาระความรู้ที่ช่วยเติมเต็มคุณค่าทางใจไปพร้อมกัน
+        </p>
+      </div>
+    </section>
 
-<ul class="nav-links">
-<li><a href="index.html">หน้าหลัก</a></li>
-<li><a href="shop.html">สินค้า</a></li>
-<li><a href="cart.html">ตะกร้า</a></li>
-<li><a href="checkout.html">ชำระเงิน</a></li>
-<li><a href="know.html">สาระน่ารู้</a></li>
-<li><a href="about.html" class="active">เกี่ยวกับเรา</a></li>
-</ul>
+    <section class="about-section">
+      <div class="about-wrap">
+        <div class="about-story">
+          <div class="about-story-media">
+            <img src="img/about_boon.jpg" alt="เรื่องราวของร้านเพียวบุญ" />
+          </div>
 
-</nav>
-</header>
+          <div class="about-story-body">
+            <h2>ตัวตนและแนวคิดของเรา</h2>
+            <p>
+              เราเชื่อว่าการทำบุญไม่ควรเป็นเพียงการเลือกซื้อของถวายเท่านั้น
+              แต่ควรเป็นประสบการณ์ที่เต็มไปด้วยความตั้งใจ ความเข้าใจ และความสบายใจ
+              ร้านเพียวบุญจึงออกแบบพื้นที่ออนไลน์ที่ช่วยให้ผู้คนเข้าถึงของทำบุญได้ง่ายขึ้น
+              พร้อมเนื้อหาความรู้ที่ช่วยให้การทำบุญมีคุณค่ามากกว่าเดิม
+            </p>
+            <p>
+              ไม่ว่าจะเป็นชุดสังฆทาน ของใช้จำเป็นสำหรับพระสงฆ์ หรือบทความสาระน่ารู้
+              เราต้องการให้ทุกองค์ประกอบในเว็บไซต์สะท้อนความเรียบง่าย สะอาดตา
+              และจริงใจ เหมือนการทำบุญที่เริ่มต้นจากใจที่บริสุทธิ์
+            </p>
+          </div>
+        </div>
 
-<!-- HERO -->
+        <div class="about-values">
+          <div class="about-values-head">
+            <h2>สิ่งที่เรายึดถือ</h2>
+            <p>แนวคิดหลักที่ทำให้ร้านเพียวบุญเป็นมากกว่าร้านขายของทำบุญ</p>
+          </div>
 
-<section class="about-hero">
+          <div class="about-values-grid">
+            <article class="about-value-card">
+              <div class="about-value-icon">๑</div>
+              <h3>ความหมาย</h3>
+              <p>
+                เราให้ความสำคัญกับการทำบุญที่มาพร้อมความเข้าใจ
+                เพื่อให้ทุกการถวายเป็นสิ่งที่มีคุณค่าและเหมาะสมจริง
+              </p>
+            </article>
 
-<h1>ร้านเพียวบุญ</h1>
+            <article class="about-value-card">
+              <div class="about-value-icon">๒</div>
+              <h3>ความสะดวก</h3>
+              <p>
+                เราออกแบบประสบการณ์การเลือกซื้อให้เรียบง่าย เข้าถึงได้ง่าย
+                และช่วยลดความยุ่งยากในการเตรียมของทำบุญ
+              </p>
+            </article>
 
-<p>
-พื้นที่สำหรับผู้ที่ต้องการทำบุญอย่างเรียบง่าย
-สะดวก และมีความหมาย
-</p>
+            <article class="about-value-card">
+              <div class="about-value-icon">๓</div>
+              <h3>ความจริงใจ</h3>
+              <p>
+                เราคัดสรรสินค้าและเนื้อหาอย่างตั้งใจ
+                เพื่อให้ผู้ใช้งานรู้สึกมั่นใจและไว้วางใจในทุกครั้งที่กลับมาเยือน
+              </p>
+            </article>
+          </div>
+        </div>
 
-</section>
+        <div class="about-cta">
+          <h2>ความมุ่งหวังของเรา</h2>
+          <p>
+            เราอยากให้ร้านเพียวบุญเป็นพื้นที่เล็ก ๆ ที่ช่วยเชื่อมโยงผู้คนกับการทำบุญอย่างอ่อนโยน
+            ร่วมสมัย และเข้าถึงง่าย ทั้งในด้านสินค้าและองค์ความรู้
+          </p>
+          <div class="about-cta-buttons">
+            <a href="shop.html" class="about-btn primary">เลือกดูสินค้า</a>
+            <a href="know.html" class="about-btn secondary">อ่านสาระน่ารู้</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
-<!-- STORY -->
-
-<section class="about-section">
-
-<div class="about-container">
-
-<div class="about-image">
-<img src="img/about_buddha.jpg">
-</div>
-
-<div class="about-text">
-
-<h2>เรื่องราวของเรา</h2>
-
-<p>
-ร้านเพียวบุญเกิดขึ้นจากความตั้งใจที่อยากทำให้การทำบุญ
-เป็นเรื่องที่เข้าถึงง่ายสำหรับทุกคน
-ไม่ว่าจะอยู่ที่ไหน ก็สามารถเตรียมของทำบุญได้อย่างสะดวก
-</p>
-
-<p>
-เราคัดสรรชุดสังฆทานและของทำบุญที่เหมาะสม
-พร้อมข้อมูลความรู้ที่ช่วยให้ผู้ทำบุญเข้าใจความหมาย
-ของการทำบุญมากยิ่งขึ้น
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- MISSION -->
-
-<section class="mission-section">
-
-<div class="mission-grid">
-
-<div class="mission-card">
-<h3>ความสะดวก</h3>
-<p>
-ช่วยให้ผู้คนสามารถเตรียมของทำบุญได้ง่าย
-โดยไม่ต้องเสียเวลาจัดหาเอง
-</p>
-</div>
-
-<div class="mission-card">
-<h3>ความหมาย</h3>
-<p>
-การทำบุญควรมีความเข้าใจ
-เราจึงนำเสนอสาระความรู้เกี่ยวกับการทำบุญ
-</p>
-</div>
-
-<div class="mission-card">
-<h3>ความจริงใจ</h3>
-<p>
-เราคัดสรรสินค้าที่เหมาะสมต่อพระสงฆ์
-และเป็นประโยชน์จริง
-</p>
-</div>
-
-</div>
-
-</section>
-
-<!-- CTA -->
-
-<section class="about-cta">
-
-<h2>ร่วมเป็นส่วนหนึ่งของการทำบุญที่มีความหมาย</h2>
-
-<p>
-เลือกสินค้าทำบุญจากร้านเพียวบุญ
-</p>
-
-<a href="shop.html">ดูสินค้า</a>
-
-</section>
-
-<footer id="footer" class="site-footer">
-
-<p>ร้านเพียวบุญ</p>
-<p>คลังความรู้สำหรับการทำบุญอย่างมีความหมาย</p>
-
-</footer>
-
+  <footer id="footer" class="site-footer">
+    <div class="footer-inner">
+      <h3>ร้านเพียวบุญ</h3>
+      <p>คลังความรู้สำหรับการทำบุญอย่างมีความหมาย</p>
+    </div>
+  </footer>
 </body>
 </html>
