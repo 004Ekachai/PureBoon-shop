@@ -11,11 +11,11 @@ const footerEl = document.getElementById("footer");
 
 function escapeHTML(value = "") {
   return String(value)
-    .replaceAll("&", "&amp;")
-    .replaceAll("<", "&lt;")
-    .replaceAll(">", "&gt;")
-    .replaceAll('"', "&quot;")
-    .replaceAll("'", "&#039;");
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
 }
 
 function nl2br(text = "") {
@@ -56,7 +56,7 @@ function renderKnowledge(items) {
               src="${image}"
               alt="${title}"
               loading="lazy"
-              onerror="this.src='https://placehold.co/800x600?text=Image+Not+Found';"
+              onerror="this.onerror=null;this.src='https://placehold.co/800x600?text=Image+Not+Found';"
             />
           </div>
 
@@ -88,8 +88,8 @@ async function loadKnowledgePage() {
 
   try {
     const snapshot = await getDocs(collection(db, "knowledge"));
-
     const docsData = [];
+
     snapshot.forEach((docSnap) => {
       docsData.push(docSnap.data());
     });
@@ -127,15 +127,29 @@ async function loadFooterFromFirebase() {
       <div class="footer-inner">
         <h3>${escapeHTML(shopName)}</h3>
         <p>คลังความรู้สำหรับการทำบุญอย่างมีความหมาย</p>
-        <div class="footer-contact">
-          ${phone ? `<span>${escapeHTML(phone)}</span>` : ""}
-          ${email ? `<span>${escapeHTML(email)}</span>` : ""}
-        </div>
-        <div class="footer-social">
-          ${facebook ? `<a href="${facebook}" target="_blank" rel="noopener noreferrer">Facebook</a>` : ""}
-          ${instagram ? `<a href="${instagram}" target="_blank" rel="noopener noreferrer">Instagram</a>` : ""}
-          ${line ? `<a href="${line}" target="_blank" rel="noopener noreferrer">Line</a>` : ""}
-        </div>
+
+        ${
+          phone || email
+            ? `
+              <div class="footer-contact">
+                ${phone ? `<span>${escapeHTML(phone)}</span>` : ""}
+                ${email ? `<span>${escapeHTML(email)}</span>` : ""}
+              </div>
+            `
+            : ""
+        }
+
+        ${
+          facebook || instagram || line
+            ? `
+              <div class="footer-social">
+                ${facebook ? `<a href="${facebook}" target="_blank" rel="noopener noreferrer">Facebook</a>` : ""}
+                ${instagram ? `<a href="${instagram}" target="_blank" rel="noopener noreferrer">Instagram</a>` : ""}
+                ${line ? `<a href="${line}" target="_blank" rel="noopener noreferrer">Line</a>` : ""}
+              </div>
+            `
+            : ""
+        }
       </div>
     `;
   } catch (error) {
