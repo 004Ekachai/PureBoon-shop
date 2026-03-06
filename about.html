@@ -1,74 +1,252 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ร้านเพียวบุญ</title>
-  <link rel="stylesheet" href="assets/home.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>เกี่ยวกับเรา | ร้านเพียวบุญ</title>
+
+<link rel="stylesheet" href="assets/home.css">
+
+<style>
+
+/* HERO */
+
+.about-hero{
+background:linear-gradient(180deg,#f6fbf7,#eef6f1);
+padding:90px 20px;
+text-align:center;
+}
+
+.about-hero h1{
+font-size:60px;
+color:#6bc584;
+margin-bottom:10px;
+}
+
+.about-hero p{
+max-width:700px;
+margin:auto;
+font-size:18px;
+line-height:1.8;
+color:#566b61;
+}
+
+/* STORY */
+
+.about-section{
+padding:70px 20px;
+}
+
+.about-container{
+max-width:1100px;
+margin:auto;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:60px;
+align-items:center;
+}
+
+.about-image img{
+width:100%;
+border-radius:20px;
+box-shadow:0 15px 30px rgba(0,0,0,0.1);
+}
+
+.about-text h2{
+color:#6bc584;
+margin-bottom:15px;
+}
+
+.about-text p{
+line-height:1.9;
+color:#556b61;
+}
+
+/* MISSION */
+
+.mission-section{
+background:#f7faf8;
+padding:70px 20px;
+}
+
+.mission-grid{
+max-width:1100px;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+}
+
+.mission-card{
+background:white;
+padding:30px;
+border-radius:18px;
+box-shadow:0 10px 25px rgba(0,0,0,0.05);
+text-align:center;
+}
+
+.mission-card h3{
+color:#6bc584;
+margin-bottom:10px;
+}
+
+/* CTA */
+
+.about-cta{
+text-align:center;
+padding:70px 20px;
+}
+
+.about-cta h2{
+color:#6bc584;
+margin-bottom:15px;
+}
+
+.about-cta a{
+display:inline-block;
+background:#6bc584;
+color:white;
+padding:12px 25px;
+border-radius:25px;
+text-decoration:none;
+margin-top:15px;
+}
+
+@media(max-width:900px){
+
+.about-container{
+grid-template-columns:1fr;
+}
+
+.mission-grid{
+grid-template-columns:1fr;
+}
+
+}
+
+</style>
+
 </head>
+
 <body>
-  <!-- Navbar -->
-  <header class="site-header">
-    <nav class="navbar">
-      <div class="logo">ร้านเพียวบุญ</div>
-      <ul class="nav-links">
-        <li><a href="index.html">หน้าหลัก</a></li>
-        <li><a href="shop.html">สินค้า</a></li>
-        <li><a href="cart.html">ตะกร้า</a></li>
-        <li><a href="checkout.html">ชำระเงิน</a></li>
-        <li><a href="know.html">สาระน่ารู้</a></li>
-        <li><a href="about.html">เกี่ยวกับเรา</a></li>
-      </ul>
-      <form action="shop.html" class="search" method="get">
-        <input type="text" name="search" placeholder="ค้นหา..." />
-        <button type="submit">ค้นหา</button>
-      </form>
-    </nav>
-  </header>
 
-  <!-- about -->
-<section class="knowledge">
-    <img src="assets/img/about-hero000.png">
-    <div id="knowledgeGrid" class="knowledge-grid"></div>
-  </section>
-  
-<section class="bg-success py-5">
-        <div class="container">
-            <div class="row align-items-center py-5">
-                <div class="col-md-4">
-                    <img src="assets/img/about-hero001.png" alt="About Hero"> 
-                </div>
-            </div>
-        </div>
-    </section>
-  <!-- /know -->
-  
-  <!-- KNOWLEDGE -->
-  <section class="knowledge">
-    <h2>เพียวบุญ</h2>
-    <p class="sub">คลังความรู้สำหรับการทำบุญอย่างมีความหมาย</p>
-    <div id="knowledgeGrid" class="knowledge-grid"></div>
-  </section>
-  <!-- /about -->
+<header class="site-header">
+<nav class="navbar">
 
-  <!-- FOOTER -->
-  <footer id="footer" class="site-footer"></footer>
-  
-  <!--Start of Tawk.to Script-->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/68f7cf13b0af5b195165d524/1j8401pu8';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
-<!--End of Tawk.to Script-->
+<div class="logo">ร้านเพียวบุญ</div>
 
-  <script type="module" src="assets/firebase.js"></script>
-  <script type="module" src="assets/home.js"></script>
+<ul class="nav-links">
+<li><a href="index.html">หน้าหลัก</a></li>
+<li><a href="shop.html">สินค้า</a></li>
+<li><a href="cart.html">ตะกร้า</a></li>
+<li><a href="checkout.html">ชำระเงิน</a></li>
+<li><a href="know.html">สาระน่ารู้</a></li>
+<li><a href="about.html" class="active">เกี่ยวกับเรา</a></li>
+</ul>
+
+</nav>
+</header>
+
+<!-- HERO -->
+
+<section class="about-hero">
+
+<h1>ร้านเพียวบุญ</h1>
+
+<p>
+พื้นที่สำหรับผู้ที่ต้องการทำบุญอย่างเรียบง่าย
+สะดวก และมีความหมาย
+</p>
+
+</section>
+
+<!-- STORY -->
+
+<section class="about-section">
+
+<div class="about-container">
+
+<div class="about-image">
+<img src="img/about_buddha.jpg">
+</div>
+
+<div class="about-text">
+
+<h2>เรื่องราวของเรา</h2>
+
+<p>
+ร้านเพียวบุญเกิดขึ้นจากความตั้งใจที่อยากทำให้การทำบุญ
+เป็นเรื่องที่เข้าถึงง่ายสำหรับทุกคน
+ไม่ว่าจะอยู่ที่ไหน ก็สามารถเตรียมของทำบุญได้อย่างสะดวก
+</p>
+
+<p>
+เราคัดสรรชุดสังฆทานและของทำบุญที่เหมาะสม
+พร้อมข้อมูลความรู้ที่ช่วยให้ผู้ทำบุญเข้าใจความหมาย
+ของการทำบุญมากยิ่งขึ้น
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- MISSION -->
+
+<section class="mission-section">
+
+<div class="mission-grid">
+
+<div class="mission-card">
+<h3>ความสะดวก</h3>
+<p>
+ช่วยให้ผู้คนสามารถเตรียมของทำบุญได้ง่าย
+โดยไม่ต้องเสียเวลาจัดหาเอง
+</p>
+</div>
+
+<div class="mission-card">
+<h3>ความหมาย</h3>
+<p>
+การทำบุญควรมีความเข้าใจ
+เราจึงนำเสนอสาระความรู้เกี่ยวกับการทำบุญ
+</p>
+</div>
+
+<div class="mission-card">
+<h3>ความจริงใจ</h3>
+<p>
+เราคัดสรรสินค้าที่เหมาะสมต่อพระสงฆ์
+และเป็นประโยชน์จริง
+</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- CTA -->
+
+<section class="about-cta">
+
+<h2>ร่วมเป็นส่วนหนึ่งของการทำบุญที่มีความหมาย</h2>
+
+<p>
+เลือกสินค้าทำบุญจากร้านเพียวบุญ
+</p>
+
+<a href="shop.html">ดูสินค้า</a>
+
+</section>
+
+<footer id="footer" class="site-footer">
+
+<p>ร้านเพียวบุญ</p>
+<p>คลังความรู้สำหรับการทำบุญอย่างมีความหมาย</p>
+
+</footer>
+
 </body>
 </html>
